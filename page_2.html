@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты</title>
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="page" class="site">
+        <!-- header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            <img src="./assets/images/logo/Group 75705.svg" alt="Логотип">
+                        </a>
+
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/whatsapp.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                        </div>
+                        <ul class="nav__list">
+                            <ul class="nav__list">
+                                <li>
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="primary" class="site-main">
+            <section style="background-image: url(./assets/images/banner/page_2banenr.png);" class="banner">
+                <div class="banner__content flex_column container">
+                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item">
+                                <a class="breadcrumbs__link" href="/">ГЛАВНАЯ > ПРОЕКТЫ</a>
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <h1 class="banner__title">ПРОЕКТЫ</h1>
+                </div>
+            </section>
+
+            <section class="section text_block__v2 container top_s_pad btm_pad">
+                <div class="text_block__v2--content flex_column">
+                    <div class="cards_project grid-2">
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project1.png" alt="">
+                            </div>
+                            <div class="card_project__content flex_column">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Север</h2>
+                                        <p>71 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project2.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Уют</h2>
+                                        <p>92 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <span class="hit">Хит продаж</span>
+                                    <span class="card_project__tag">Терраса</span>
+                                    <span class="card_project__tag">Еще +2</span>
+                                </div>
+                                <img src="./assets/images/projects/project3.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Урал</h2>
+                                        <p>103 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>5 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project4.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Воля</h2>
+                                        <p>129 м² · <span class="span-v2">2 этажа</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Тег проекта</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project6.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Горный</h2>
+                                        <p>69 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project4.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Воля</h2>
+                                        <p>129 м² · <span class="span-v2">2 этажа</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <section style="background-image: url(./assets/images/form/forma.png); border-radius: 24px;"
+                    class="section text_block__v7">
+                    <div class="text_block__v7--content">
+                        <div class="text_block__v7--title">
+                            <h2>Получить полный
+                                каталог&nbsp;проектов</h2>
+                            <p>полный каталог проектов со скидкой 2% и расчет стоимости за 1 час
+                            </p>
+                        </div>
+                        <form action="#" class="text_block__v7--form form_section">
+                            <div class="form_section__fields">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Ваше имя <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="name" placeholder="Иван Иванов"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Телефон для связи <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="tel" placeholder="+7 (000) 000-00-00"
+                                        required>
+                                </div>
+
+                                <button class="form_section__btn">Оставить заявку</button>
+
+                                <div class="form_checkbox_wrapper">
+                                    <label class="form_checkbox">
+                                        <input class="form_checkbox__input" type="checkbox" name="agreement" id=""
+                                            required>
+                                        <span class="form-checkbox__text">Я согласен(а) на обработку персональных
+                                            данных</span>
+                                    </label>
+                                </div>
+
+                                <p class="form_section__policy">Нажимая на кнопку, вы соглашаетесь с Политикой обработки
+                                    персональных данных</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <div class="footer_block__1">
+                        <div class="footer_logo">
+                            <img src="./assets/images/Frame 1321316861.png" alt="">
+                            <span>Свой дом. Твои правила.</span>
+                        </div>
+                        <div class="footer__icon">
+                            <a href="https://t.me/SK_Tvoy_Ural" type="telegram">
+                                <img src="./assets/icons/footerTelegram.svg" alt="">
+                                <p class="footer_telegram__p">Телеграм</p>
+                            </a>
+                            <a href="tel:+79120452522" type="tel"> 
+                                <img src="./assets/icons/footerTel.svg" alt="">
+                                <p class="footer_tel__p">+7 (912) 045-25-22</p>
+                            </a>
+                            <a href="mailto:byckove00@gmail.com" type="mail">
+                                <img src="./assets/icons/footerEmail.svg" alt="">
+                                <p class="footer_telegram__p">byckove00@gmail.com</p>
+                            </a>
+                        </div>
+                        <a href="#" class="onTapelogofoot">
+                            <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="footer_block__right grid-3">
+                        <div class="footer_block__2">
+                            <h3>ПРОЕКТЫ</h3>
+                            <a href="#">Проект 1</a>
+                            <a href="#">Проект 2</a>
+                            <a href="#">Проект 3</a>
+                            <a href="#">Проект 4</a>
+                        </div>
+                        <div class="footer_block__3">
+                            <h3>КОМПАНИЯ</h3>
+                            <a href="#">О компании</a>
+                            <a href="#">Контакты</a>
+                            <a href="#">Политика
+                                конфиденциальности</a>
+                        </div>
+                        <div class="footer_block__4">
+                            <div class="add flex_column">
+                                <h3>АДРЕС</h3>
+                                <p>г. Екатеринбург,
+                                    ул.&nbsp;Московская, д.&nbsp;96.</p>
+                            </div>
+                            <div class="time flex_column">
+                                <h4>ВРЕМЯ РАБОТЫ</h4>
+                                <p class="time-text">
+                                    <span class="time-day">ПН-ПТ</span>
+                                    <span class="time-hours">09-20 МСК</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="onTapelogo_mob">
+                        <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                    </a>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html

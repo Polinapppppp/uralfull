@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании</title>
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="page" class="site">
+        <!-- header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            <img src="./assets/images/logo/Group 75705.svg" alt="Логотип">
+                        </a>
+
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/whatsapp.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                        </div>
+                        <ul class="nav__list">
+                            <ul class="nav__list">
+                                <li>
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="primary" class="site-main">
+            <section style="background-image: url(./assets/images/banner/page_5banner.png);" class="banner">
+                <div class="banner__content flex_column container">
+                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item">
+                                <a class="breadcrumbs__link" href="/">ГЛАВНАЯ > КОНТАКТЫ</a>
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <h1 class="banner__title">Контакты</h1>
+                </div>
+            </section>
+
+            <!-- contacts -->
+            <section class="container contacts top_pad btm_pad">
+                <div class="contacts__info card grid-4 pad_24">
+                    <div class="contacts__info-block flex_column">
+                        <p class="contacts__subtitle">Телефон для связи</p>
+                        <h3 class="contacts__info-value">+7 (912) 045-25-22</h3>
+                    </div>
+                    <div class="contacts__info-block flex_column">
+                        <p class="contacts__subtitle">Служба заботы</p>
+                        <h3 class="contacts__info-value">+7 (932) 604 31-00</h3>
+                    </div>
+                    <div class="contacts__info-block flex_column">
+                        <p class="contacts__subtitle">График работы</p>
+                        <h3 class="contacts__info-value letter_2">ПН-ПТ 09—22</h3>
+                    </div>
+                    <div class="contacts__info-block flex_column">
+                        <p class="contacts__subtitle">Электронная почта</p>
+                        <h3 class="contacts__info-value letter_2">byckove00@gmail.com</h3>
+                    </div>
+                </div>
+                <div class="contacts__bottom gap_16">
+                    <div class="contacts__left card pad_24">
+                        <h3 class="address_title">АДРЕС ОФИСА<br>
+                            компании</h3>
+                        <h4 class="address_info">г. Екатеринбург,<br>
+                            ул. Московская, д. 196.</h4>
+                        <p class="time__info">ВРЕМЯ РАБОТЫ: 9:00—22:00</p>
+                        <a href="#" class="contacts__button"><button>Построить маршрут</button></a>
+                    </div>
+                    <div class="contacts__right">
+                        <img src="assets/images/contacts/contacts.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <section style="background-image: url(./assets/images/form/forma6.jpg); border-radius: 24px;  background-position: 45% 70%;"
+                    class="section text_block__v7">
+                    <div class="text_block__v7--content">
+                        <div class="text_block__v7--title">
+                            <h2>Свяжитесь с нами
+                                для обсуждения проекта</h2>
+                            <p>Наши специалисты готовы ответить на все возникшие вопросы и провести бесплатную
+                                консультацию.
+                            </p>
+                        </div>
+                        <form action="#" class="text_block__v7--form form_section">
+                            <div class="form_section__fields">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Ваше имя <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="name" placeholder="Иван Иванов"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Телефон для связи <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="tel" placeholder="+7 (000) 000-00-00"
+                                        required>
+                                </div>
+
+                                <button class="form_section__btn">Оставить заявку</button>
+
+                                <div class="form_checkbox_wrapper">
+                                    <label class="form_checkbox">
+                                        <input class="form_checkbox__input" type="checkbox" name="agreement" id=""
+                                            required>
+                                        <span class="form-checkbox__text">Я согласен(а) на обработку персональных
+                                            данных</span>
+                                    </label>
+                                </div>
+
+                                <p class="form_section__policy">Нажимая на кнопку, вы соглашаетесь с Политикой обработки
+                                    персональных данных</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <div class="footer_block__1">
+                        <div class="footer_logo">
+                            <img src="./assets/images/Frame 1321316861.png" alt="">
+                            <span>Свой дом. Твои правила.</span>
+                        </div>
+                        <div class="footer__icon">
+                            <a href="https://t.me/SK_Tvoy_Ural" type="telegram">
+                                <img src="./assets/icons/footerTelegram.svg" alt="">
+                                <p class="footer_telegram__p">Телеграм</p>
+                            </a>
+                            <a href="tel:+79120452522" type="tel"> 
+                                <img src="./assets/icons/footerTel.svg" alt="">
+                                <p class="footer_tel__p">+7 (912) 045-25-22</p>
+                            </a>
+                            <a href="mailto:byckove00@gmail.com" type="mail">
+                                <img src="./assets/icons/footerEmail.svg" alt="">
+                                <p class="footer_telegram__p">byckove00@gmail.com</p>
+                            </a>
+                        </div>
+                        <a href="#" class="onTapelogofoot">
+                            <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="footer_block__right grid-3">
+                        <div class="footer_block__2">
+                            <h3>ПРОЕКТЫ</h3>
+                            <a href="#">Проект 1</a>
+                            <a href="#">Проект 2</a>
+                            <a href="#">Проект 3</a>
+                            <a href="#">Проект 4</a>
+                        </div>
+                        <div class="footer_block__3">
+                            <h3>КОМПАНИЯ</h3>
+                            <a href="#">О компании</a>
+                            <a href="#">Контакты</a>
+                            <a href="#">Политика
+                                конфиденциальности</a>
+                        </div>
+                        <div class="footer_block__4">
+                            <div class="add flex_column">
+                                <h3>АДРЕС</h3>
+                                <p>г. Екатеринбург,
+                                    ул.&nbsp;Московская, д.&nbsp;96.</p>
+                            </div>
+                            <div class="time flex_column">
+                                <h4>ВРЕМЯ РАБОТЫ</h4>
+                                <p class="time-text">
+                                    <span class="time-day">ПН-ПТ</span>
+                                    <span class="time-hours">09-20 МСК</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="onTapelogo_mob">
+                        <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                    </a>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

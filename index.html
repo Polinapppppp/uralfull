@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="page" class="site">
+        <!-- header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__top">
+                        <a class="logo" href="/">
+                            <img src="./assets/images/logo/Group 75705.svg" alt="Логотип">
+                        </a>
+
+                        <nav aria-label="Основная навигация" class="desktop-nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                            <a href="#" class="icon-btn" aria-label="WhatsApp">
+                                <img class="icon-btn__icon" src="./assets/icons/whatsapp.svg" alt="WhatsApp">
+                            </a>
+                            <a href="#" class="icon-btn" aria-label="Telegram">
+                                <img class="icon-btn__icon" src="./assets/icons/tg.svg" alt="Telegram">
+                            </a>
+
+                            <button class="burger-btn" id="burgerBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="header__right">
+                            <a href="tel:+79326043100" class="header__phone">+7 (932) 604 31-00</a>
+                        </div>
+                        <ul class="nav__list">
+                            <ul class="nav__list">
+                                <li>
+                                    <a class="nav__link" href="page_2.html">Проекты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html">О компании</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#certific">Сертификаты</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_4.html#faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a class="nav__link" href="page_5.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="primary" class="site-main">
+            <!-- banner_main -->
+            <section style="background-image: url(./assets/images/banner/banner.svg);" class="banner_main flex_row">
+                <div class="banner_main__content container">
+                    <h1 class="banner_main__title">СВОЙ ДОМ
+                        <span class="banner_main__title_span">ТВОЙ УРАЛ</span>
+                    </h1>
+                    <div class="banner_main__right flex_column">
+                        <p class="banner_main__subtitle">Современные и продуманные до мелочей дома, созданные специально
+                            для
+                            жизни на
+                            Урале.</p>
+                        <button>Запросить консультацию</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- advantages -->
+            <section class="advantages top_pad ">
+                <div class="advantages__content grid-4 container btm_s_pad">
+
+                    <div class="card advantages-card pad_20 flex_column" style="padding-right: 7px;">
+                        <h3 class="advantages__title">Построим дом
+                            за&nbsp;3&nbsp;месяца&nbsp;</h3>
+                        <p class="advantages__subtitle">Дом собирается значительно быстрее традиционных технологий</p>
+                        <img src="assets/images/advantages/house.svg" alt="">
+                    </div>
+                    <div class="card advantages-card pad_20 flex_column">
+                        <h3 class="advantages__title">Напрямую
+                            от&nbsp;производителя</h3>
+                        <p class="advantages__subtitle">Мы сами производим материалы, поэтому отвечаем за качество дома
+                            с
+                            первого этапа.</p>
+                    </div>
+                    <div class="card advantages-card pad_20 flex_column">
+                        <h3 class="advantages__title">Фиксированная цена&nbsp;</h3>
+                        <p class="advantages__subtitle">Цена фиксируется в договоре
+                            и&nbsp;не&nbsp;изменится&nbsp;в&nbsp;процессе строительства.&nbsp;</p>
+                        <img src="assets/images/advantages/money.svg" alt="">
+                    </div>
+                    <div class="card advantages-card pad_20 flex_column">
+                        <h3 class="advantages__title c4">Строительство
+                            в&nbsp;любое время года</h3>
+                        <p class="advantages__subtitle">Строим при любых погодных условиях и адаптируемся
+                            к техническим условиям участка.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section text_block__v1 container top_pad">
+                <div class="title_content gap_10">
+                    <p class="subtitle">О Компании</p>
+                    <h2 class="title">Дома из СИП-панелей от производителя</h2>
+                </div>
+                <div class="text_block__v1--content gap_16 grid-3">
+                    <div class="text_block__v1--card card card-1 span-2-row-1">
+                        <h3>Теплые дома для жизни
+                            в&nbsp;суровых&nbsp;условиях</h3>
+                        <p class="text_block__v1--card_p1">Мы строим дома, которые специально созданы для климата
+                            Урала.
+                            Объединив в одном лице
+                            производителя и застройщика, мы лично отвечаем за качество на каждом этапе: от
+                            выпуска
+                            панелей до финальной отделки вашего&nbsp;дома.
+                        </p>
+                        <p class="text_block__v1--card_p2">
+                            С нами вы получите не просто стены, а по-
+                            настоящему теплый дом, адаптированный
+                            для комфортной жизни на Урале
+                        </p>
+                    </div>
+                    <div class="card span-2 span-2-row-1">
+                        <div class="main_info flex_row gap_12">
+                            <div class="main_info__card flex_column width-308">
+                                <h4>6 лет</h4>
+                                <p>Строим энергоэффективные&nbsp;дома</p>
+                            </div>
+                            <div class="main_info__card flex_column width-283">
+                                <h4>3 месяца</h4>
+                                <p>Среднее время строительства</p>
+                            </div>
+                        </div>
+                        <img class="abs-cover" src="./assets/images/about/Rectangle 4.png" alt="Теплые дома для жизни">
+                    </div>
+                </div>
+                <div class="text_block__v1--content gap_16 grid-3">
+                    <div class="card span-2 span-2-row-2">
+                        <div class="main_info flex_row gap_12">
+                            <div class="main_info__card flex_column width-450">
+                                <span>Экономия бюджета</span>
+                                <p>Меньше затрат на отопление и выгодная стоимость
+                                    строительства относительно других
+                                    технологий</p>
+                            </div>
+                            <div class="main_info__card flex_column width-238">
+                                <h4>12 лет</h4>
+                                <p>Производим СИП&#8209;панели</p>
+                            </div>
+                        </div>
+                        <img class="abs-cover" src="./assets/images/about/about2.png" alt="Теплые дома для жизни">
+                    </div>
+                    <div class="text_block__v1--card card card-2 span-2-row-2">
+                        <h3>Прямое общение<br class="mbr">
+                            с&nbsp;производителем&nbsp;</h3>
+                        <p class="text_block__v1--card_p1">Мы производим СИП-панели<br>
+                            на собственном производстве, что гарантирует контроль качества на каждом этапе —
+                            от
+                            материалов до готового дома.</p>
+                        <p class="text_block__v1--card_p2">
+                            Панели изготавливаются на производстве с соблюдением всех стандартов, что
+                            исключает ошибки
+                            ручной сборки на строительной площадке.
+                        </p>
+                        <a href="#" class="text_block__v1--btn">Узнать больше о производстве</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section text_block__v2 container top_pad">
+                <div class="text_block__v2_title">
+                    <div class="title_content gap_10">
+                        <p class="subtitle">ДОМОКОМПЛЕКТЫ ИЗ СИП-ПАНЕЛЕЙ</p>
+                        <h2 class="title">НАШИ ПРОЕКТЫ</h2>
+                    </div>
+                    <a href="#" class="text_block__v2_title--btn-dark">Все проекты</a>
+                </div>
+                <div class="text_block__v2--content flex_column">
+                    <div class="cards_project grid-2">
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <a href="page_3.html"><img src="./assets/images/projects/project1.png" alt=""></a>
+                            </div>
+                            <div class="card_project__content flex_column">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Север</h2>
+                                        <p>71 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="page_3.html" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project2.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Уют</h2>
+                                        <p>92 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <span class="hit">Хит продаж</span>
+                                    <span class="card_project__tag">Терраса</span>
+                                    <span class="card_project__tag">Еще +2</span>
+                                </div>
+                                <img src="./assets/images/projects/project3.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Урал</h2>
+                                        <p>103 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>5 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project4.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Воля</h2>
+                                        <p>129 м² · <span class="span-v2">2 этажа</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Тег проекта</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project6.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Горный</h2>
+                                        <p>69 м² · <span class="span-v2">1 этаж</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card_project flex_column">
+                            <div class="card_project__image_wrapper">
+                                <div class="card_project__tags">
+                                    <a href="#" class="card_project__tag">Терраса</a>
+                                    <a href="#" class="card_project__tag">Еще +2</a>
+                                </div>
+                                <img src="./assets/images/projects/project4.png" alt="">
+                            </div>
+                            <div class="card_project__content">
+                                <div class="card_project__info flex_row">
+                                    <div class="card_project__details flex_row">
+                                        <h2>Воля</h2>
+                                        <p>129 м² · <span class="span-v2">2 этажа</span></p>
+                                    </div>
+                                    <p class="card_v3__top_price">от <span class="project_price">10 млн ₽</span></p>
+                                </div>
+                                <div class="card_project__hover flex_row">
+                                    <div class="card_project__hover_list grid-4">
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Кухня-гостиная</p>
+                                            <h3>32,5 м<span class="hover_span">²</span></h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Комнат</p>
+                                            <h3>3 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Спален</p>
+                                            <h3>2 шт</h3>
+                                        </div>
+                                        <div class="card_project__hover_item flex_column">
+                                            <p>Терраса</p>
+                                            <h3>Есть</h3>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card_project--btn">Подробнее</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="btm-btn_text_block__v2 flex_column">
+                        <a href="#" class="text_block__v2_title--btn-dark_mob">Все проекты</a>
+                        <a href="#" class="text_block__v2--btn">Получить полный каталог проектов</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section text_block__v3 container top_pad btm_pad">
+                <div class="title_content gap_10">
+                    <p class="subtitle">О Компании</p>
+                    <h2 class="title">Миссия компании</h2>
+                </div>
+                <div class="text_block__v3--content gap_16 grid-3">
+                    <div class="text_block__v3--card card card-1">
+                        <h3>Все продумано
+                            до&nbsp;мелочей</h3>
+                        <p>Мы производим и строим дома, которые идеально подходят для уральского климата — чтобы люди
+                            могли получить качественный загородный дом без переплат и лишних рисков.
+                        </p>
+                        <a href="#" class="text_block__v3--btn">Узнать больше о производстве</a>
+                    </div>
+                    <div class="card span-2 mb1">
+                        <img class="abs-cover" src="./assets/images/mission/mission1.png" alt="Теплые дома для жизни">
+                    </div>
+                </div>
+                <div class="text_block__v3--content gap_16 grid-3">
+                    <div class="card span-2">
+                        <img class="abs-cover" src="./assets/images/mission/mission2.png" alt="Теплые дома для жизни">
+
+                        <div class="temperature-badges">
+                            <div class="temp-badge temp-badge--winter">
+                                <span class="temp-value">-37°C</span>
+                            </div>
+                            <div class="temp-badge temp-badge--summer">
+                                <span class="temp-value">+29°C</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text_block__v3--card card card-2">
+                        <h3>Комфорт
+                            круглый&nbsp;год</h3>
+                        <p class="text_block__v3--card_p1">Технология СИП-панелей идеально подходит для уральского
+                            климата — обеспечивает надежную теплоизоляцию зимой и комфортную прохладу летом.</p>
+                        <p class="text_block__v3--card_p2">
+                            Дома из СИП-панелей отлично сохраняют тепло даже в морозы до -40°C, а летом защищают от жары
+                            благодаря эффективной теплоизоляции.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <section style="background-image: url(./assets/images/form/forma2.png); border-radius: 24px;"
+                    class="section text_block__v4">
+                    <div class="text_block__v4--content">
+                        <div class="text_block__v4--title">
+                            <h2>Хочу свой дом, но не
+                                знаю, с чего начать</h2>
+                            <p>Наши специалисты готовы ответить на все возникшие вопросы и провести бесплатную
+                                консультацию.
+                            </p>
+                        </div>
+                        <form action="#" class="text_block__v4--form form_section">
+                            <div class="form_section__fields">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Ваше имя <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="name" placeholder="Иван Иванов"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Телефон для связи <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="tel" placeholder="+7 (000) 000-00-00"
+                                        required>
+                                </div>
+
+                                <button class="form_section__btn">Оставить заявку</button>
+
+                                <div class="form_checkbox_wrapper">
+                                    <label class="form_checkbox">
+                                        <input class="form_checkbox__input" type="checkbox" name="agreement" id=""
+                                            required>
+                                        <span class="form-checkbox__text">Я согласен(а) на обработку персональных
+                                            данных</span>
+                                    </label>
+                                </div>
+
+                                <p class="form_section__policy">Нажимая на кнопку, вы соглашаетесь с Политикой обработки
+                                    персональных данных</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <section class="reviews container top_pad">
+                <div class="reviews_title flex_row">
+                    <div class="title_content flex_column gap_4">
+                        <p class="subtitle">ЧТо говорят клиенты</p>
+                        <h2 class="title">Отзывы наших клиентов</h2>
+                    </div>
+                    <div class="title_buttons flex_row gap_16">
+                        <button class="make__review flex_row"><svg width="15" height="15" viewBox="0 0 15 15"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.1667 6.33333V13.0417C12.1667 13.2332 12.1289 13.4228 12.0557 13.5997C11.9824 13.7767 11.8749 13.9374 11.7395 14.0729C11.6041 14.2083 11.4433 14.3157 11.2664 14.389C11.0895 14.4623 10.8998 14.5 10.7083 14.5H1.95833C1.57156 14.5 1.20063 14.3464 0.927136 14.0729C0.653645 13.7994 0.5 13.4284 0.5 13.0417V4.29167C0.5 3.90489 0.653645 3.53396 0.927136 3.26047C1.20063 2.98698 1.57156 2.83333 1.95833 2.83333H8.06438M10.4167 0.5H14.5V4.58333M6.33333 8.66667L14.2083 0.791667"
+                                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Оставить
+                            отзыв</button>
+                        <button class="all__reviews flex_row"><svg width="15" height="15" viewBox="0 0 15 15"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.1667 6.33333V13.0417C12.1667 13.2332 12.1289 13.4228 12.0557 13.5997C11.9824 13.7767 11.8749 13.9374 11.7395 14.0729C11.6041 14.2083 11.4433 14.3157 11.2664 14.389C11.0895 14.4623 10.8998 14.5 10.7083 14.5H1.95833C1.57156 14.5 1.20063 14.3464 0.927136 14.0729C0.653645 13.7994 0.5 13.4284 0.5 13.0417V4.29167C0.5 3.90489 0.653645 3.53396 0.927136 3.26047C1.20063 2.98698 1.57156 2.83333 1.95833 2.83333H8.06438M10.4167 0.5H14.5V4.58333M6.33333 8.66667L14.2083 0.791667"
+                                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Все
+                            отзывы</button>
+                    </div>
+                </div>
+                <div class="reviews_content grid-3 gap_16">
+                    <div class="review_card card">
+                        <div class="info_user">
+                            <img src="assets/icons/user.svg" alt="">
+                            <div class="info_user__right flex_column">
+                                <h3 class="name_user">Иван</h3>
+                                <p class="date_review">12 декабря 2025</p>
+                            </div>
+                        </div>
+                        <p class="review_comment">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                            urna. Pellentesque sit sapien...
+                        </p>
+                        <p class="where_published">
+                            Отзыв опубликован на <a href="#"><span>Яндекс Картах</span></a>
+                        </p>
+                    </div>
+                    <div class="review_card card">
+                        <div class="info_user">
+                            <img src="assets/icons/user.svg" alt="">
+                            <div class="info_user__right">
+                                <h3 class="name_user">Иван</h3>
+                                <p class="date_review">12 декабря 2025</p>
+                            </div>
+                        </div>
+                        <p class="review_comment">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                            urna. Pellentesque sit sapien...
+                        </p>
+                        <p class="where_published">
+                            Отзыв опубликован на <a href="#"><span>Яндекс Картах</span></a>
+                        </p>
+                    </div>
+                    <div class="review_card card">
+                        <div class="info_user">
+                            <img src="assets/icons/user.svg" alt="">
+                            <div class="info_user__right">
+                                <h3 class="name_user">Иван</h3>
+                                <p class="date_review">12 декабря 2025</p>
+                            </div>
+                        </div>
+                        <p class="review_comment">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                            urna. Pellentesque sit sapien...
+                        </p>
+                        <p class="where_published">
+                            Отзыв опубликован на <a href="#"><span>Яндекс Картах</span></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="title_buttons_mob flex_row">
+                    <a href="#" class="make__review_mob"><button>Оставить
+                            отзыв</button></a>
+                    <a href="#" class="all__reviews_mob"><button>Все
+                            отзывы</button></a>
+                </div>
+            </section>
+
+            <section class="section certificate_section container top_pad">
+                <div class="title_content flex_column gap_4">
+                    <p class="subtitle">Сертификаты компании</p>
+                    <h2 class="title">Держим планку качества</h2>
+                </div>
+
+                <div class="certificate_slider_wrapper">
+                    <div class="certificate_button-prev "><img src="assets/icons/arrow_prev.svg" alt=""></div>
+                    <div class="certificate_button-next "><img src="assets/icons/arrow_next.svg" alt=""></div>
+
+                    <div class="certificate_slider swiper container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_1.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_2.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_3.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_4.png" alt="">
+                                <p class="slide_subtitle">Экспертное заключение</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_1.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_2.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_3.png" alt="">
+                                <p class="slide_subtitle">СЕРТИФИКАТ СООТВЕТСТВИЯ</p>
+                            </div>
+                            <div class="swiper-slide certificate_slide">
+                                <img src="assets/images/certificates/certificate_4.png" alt="">
+                                <p class="slide_subtitle">Экспертное заключение</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section slider_block container top_pad btm_pad">
+                <div class="title_content gap_10">
+                    <p class="subtitle">Результаты работы</p>
+                    <h2 class="title">Галерея выполненных работ</h2>
+                </div>
+
+                <div class="swiper slider_block__wrapper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider1.png" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider2.png" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider3.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider4.png" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider5.png" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider6.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider7.jpg" alt="Дом 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider8.jpg" alt="Дом 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider9.jpg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider10.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider11.jpg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider12.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider13.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider14.jpg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider15.jpg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider16.png" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider17.jpg" alt="Дом 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/slider-main/slider18.jpg" alt="Дом 3">
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-prev"><svg width="24" height="24" viewBox="0 0 18 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.5564 8.36401C17.1086 8.36401 17.5564 7.9163 17.5564 7.36401C17.5564 6.81173 17.1086 6.36401 16.5564 6.36401V7.36401V8.36401ZM0.292894 6.65691C-0.0976295 7.04743 -0.0976295 7.6806 0.292894 8.07112L6.65686 14.4351C7.04738 14.8256 7.68054 14.8256 8.07107 14.4351C8.46159 14.0446 8.46159 13.4114 8.07107 13.0209L2.41421 7.36401L8.07107 1.70716C8.46159 1.31664 8.46159 0.68347 8.07107 0.292946C7.68054 -0.0975785 7.04738 -0.0975785 6.65686 0.292946L0.292894 6.65691ZM16.5564 7.36401V6.36401L1 6.36401V7.36401V8.36401L16.5564 8.36401V7.36401Z"
+                                fill="#1B1E18" />
+                        </svg>
+                    </div>
+
+                    <div class="swiper-button-next"><svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 6.36401C0.447715 6.36401 0 6.81173 0 7.36401C0 7.9163 0.447715 8.36401 1 8.36401V7.36401V6.36401ZM17.2635 8.07112C17.654 7.6806 17.654 7.04743 17.2635 6.65691L10.8995 0.292946C10.509 -0.0975785 9.87581 -0.0975785 9.48528 0.292946C9.09476 0.68347 9.09476 1.31664 9.48528 1.70716L15.1421 7.36401L9.48528 13.0209C9.09476 13.4114 9.09476 14.0446 9.48528 14.4351C9.87581 14.8256 10.509 14.8256 10.8995 14.4351L17.2635 8.07112ZM1 7.36401V8.36401H16.5563V7.36401V6.36401L1 6.36401V7.36401Z"
+                                fill="#1B1E18" />
+                        </svg>
+                    </div>
+
+                    <div class="swiper_counter">
+                        <span class="current">1</span>/<span class="total">14</span>
+                    </div>
+
+                    <button class="slider_block--fullscreen" aria-label="На весь экран">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <div class="container">
+                <section class="section text_block__v7" style="background-image: url(./assets/images/form/forma3.png);">
+                    <div class="text_block__v7--content">
+                        <div class="text_block__v7--title">
+                            <h2>Остались вопросы?
+                                Оставьте заявку</h2>
+                            <p>Наши специалисты готовы ответить на все возникшие вопросы и провести бесплатную
+                                консультацию.
+                            </p>
+                        </div>
+                        <form action="#" class="text_block__v7--form form_section">
+                            <div class="form_section__fields">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Ваше имя <span
+                                            class="form-span">*</span></label>
+                                    <input type="text" class="form_input" name="name" placeholder="Иван Иванов"
+                                        required>
+                                </div>
+                                <div class="form_group">
+                                    <label for="tel" class="form_label">Телефон для связи <span
+                                            class="form-span">*</span></label>
+                                    <input type="tel" class="form_input" name="tel" placeholder="+7 (000) 000-00-00"
+                                        required>
+                                </div>
+
+                                <button class="form_section__btn">Оставить заявку</button>
+
+                                <div class="form_checkbox_wrapper">
+                                    <label class="form_checkbox">
+                                        <input class="form_checkbox__input" type="checkbox" name="agreement" id=""
+                                            required>
+                                        <span class="form-checkbox__text">Я согласен(а) на обработку
+                                            персональных&nbsp;данных</span>
+                                    </label>
+                                </div>
+
+                                <p class="form_section__policy">Нажимая на кнопку, вы соглашаетесь с Политикой обработки
+                                    персональных&nbsp;данных</p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <section class="container contacts top_pad btm_pad--40">
+                <div class="contacts__bottom gap_16">
+                    <div class="contacts__left card pad_24 mc">
+                        <h3 class="address_title">АДРЕС компании</h3>
+                        <h4 class="address_info">г. Екатеринбург,
+                            ул.&nbsp;Московская,&nbsp;д.&nbsp;96.</h4>
+                        <div class="contacts__tel flex_column">
+                            <p>Телефон офиса продаж</p>
+                            <a href="tel:+7 (932) 604 31-00">+7 (932) 604 31-00</a>
+                        </div>
+                        <div class="contacts__mail flex_column">
+                            <p>Электронная почта</p>
+                            <a href="mailto:byckove00@gmail.com">byckove00@gmail.com</a>
+                        </div>
+                        <a href="#" class="contacts__button"><button>Построить маршрут</button></a>
+                    </div>
+                    <div class="contacts__right">
+                        <img src="assets/images/contacts/contacts.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <div class="footer_block__1">
+                        <div class="footer_logo">
+                            <img src="./assets/images/Frame 1321316861.png" alt="">
+                            <span>Свой дом. Твои правила.</span>
+                        </div>
+                        <div class="footer__icon">
+                            <a href="https://t.me/SK_Tvoy_Ural" type="telegram">
+                                <img src="./assets/icons/footerTelegram.svg" alt="">
+                                <p class="footer_telegram__p">Телеграм</p>
+                            </a>
+                            <a href="tel:+79120452522" type="tel"> 
+                                <img src="./assets/icons/footerTel.svg" alt="">
+                                <p class="footer_tel__p">+7 (912) 045-25-22</p>
+                            </a>
+                            <a href="mailto:byckove00@gmail.com" type="mail">
+                                <img src="./assets/icons/footerEmail.svg" alt="">
+                                <p class="footer_telegram__p">byckove00@gmail.com</p>
+                            </a>
+                        </div>
+                        <a href="#" class="onTapelogofoot">
+                            <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="footer_block__right grid-3">
+                        <div class="footer_block__2">
+                            <h3>ПРОЕКТЫ</h3>
+                            <a href="#">Проект 1</a>
+                            <a href="#">Проект 2</a>
+                            <a href="#">Проект 3</a>
+                            <a href="#">Проект 4</a>
+                        </div>
+                        <div class="footer_block__3">
+                            <h3>КОМПАНИЯ</h3>
+                            <a href="#">О компании</a>
+                            <a href="#">Контакты</a>
+                            <a href="#">Политика
+                                конфиденциальности</a>
+                        </div>
+                        <div class="footer_block__4">
+                            <div class="add flex_column">
+                                <h3>АДРЕС</h3>
+                                <p>г. Екатеринбург,
+                                    ул.&nbsp;Московская, д.&nbsp;96.</p>
+                            </div>
+                            <div class="time flex_column">
+                                <h4>ВРЕМЯ РАБОТЫ</h4>
+                                <p class="time-text">
+                                    <span class="time-day">ПН-ПТ</span>
+                                    <span class="time-hours">09-20 МСК</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="onTapelogo_mob">
+                        <img src="./assets/images/logo/ontapelogofooter.svg" alt="">
+                    </a>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
