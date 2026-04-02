@@ -709,7 +709,7 @@ body {
 .header__right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .header__phone {
@@ -720,6 +720,7 @@ body {
     letter-spacing: 0.04em;
     line-height: 100%;
     text-decoration: none;
+    padding-right: 2px;
 }
 
 .icon-btn {
@@ -966,7 +967,7 @@ body {
     height: 340px;
 }
 
-.mbr{
+.mbr {
     display: none;
 }
 
@@ -1465,34 +1466,6 @@ span.hover_span {
     font-weight: 500;
     color: #1B1E18;
     line-height: 140%;
-}
-
-
-@media (max-width:1300px) {
-    .temp-badge {
-        padding: 14px 18px;
-    }
-}
-
-@media (max-width:950px) {
-    .temp-badge {
-        padding: clamp(12px, 3vw, 14px) clamp(14px, 3vw, 18px);
-    }
-
-    .temp-value {
-        font-size: clamp(20px, 5vw, 28px);
-    }
-}
-
-
-@media (max-width:390px) {
-    .temp-badge {
-        padding: 12px 16px;
-    }
-
-    .temp-value {
-        font-size: 24px;
-    }
 }
 
 /* text_block__v4 */
@@ -3490,8 +3463,7 @@ p.questions_text {
 
 
 
-
-@media (max-width: 1200px) and (min-width: 901px) {
+@media (max-width:1200px) {
     .technology_info {
         gap: 8px;
         right: 8px;
@@ -3541,11 +3513,7 @@ p.questions_text {
     .specific--content.span-2 {
         order: 1;
     }
-}
 
-
-
-@media (max-width:1200px) {
     .desktop-nav .nav__list {
         gap: 15px;
     }
@@ -3559,15 +3527,17 @@ p.questions_text {
     }
 }
 
-
 @media (max-width:1000px) {
     .about_section .width-289 {
         display: none;
     }
 }
 
-
 @media (max-width: 1300px) {
+    .temp-badge {
+        padding: 14px 18px;
+    }
+
     .main_info {
         gap: 10px;
     }
@@ -3752,7 +3722,6 @@ p.questions_text {
 
     .lead_image {
         right: -40px;
-        opacity: 0.9;
     }
 
     .lead_section button {
@@ -4195,7 +4164,6 @@ p.questions_text {
 
     .lead_image {
         right: -80px;
-        opacity: 0.75;
     }
 
     .lead_section button {
@@ -4861,6 +4829,14 @@ p.questions_text {
 
 @media(max-width:950px) {
 
+    .temp-badge {
+        padding: clamp(12px, 3vw, 14px) clamp(14px, 3vw, 18px);
+    }
+
+    .temp-value {
+        font-size: clamp(20px, 5vw, 28px);
+    }
+
     .banner_main__title {
         font-size: 78px;
     }
@@ -5321,7 +5297,6 @@ p.questions_text {
 
     .lead_image {
         right: -60px;
-        opacity: 0.85;
     }
 
     .lead_section button {
@@ -5804,7 +5779,6 @@ p.questions_text {
 
     .lead_image {
         right: -100px;
-        opacity: 0.6;
     }
 
     .lead_section button {
@@ -6304,6 +6278,8 @@ p.questions_text {
     .lead_section-title {
         font-size: 22px;
         white-space: normal;
+        max-width: 211px;
+
     }
 
     .lead_section-subtitle {
@@ -6313,8 +6289,13 @@ p.questions_text {
     }
 
     .lead_image {
-        right: -120px;
-        opacity: 0.4;
+        position: absolute;
+        right: -114px;
+        top: 50%;
+        transform: translateY(-103%) rotate(-9deg);
+        height: auto;
+        width: 244px;
+        z-index: 1;
     }
 
     .lead_section button {
@@ -6327,6 +6308,14 @@ p.questions_text {
 }
 
 @media (max-width:390px) {
+
+    .temp-badge {
+        padding: 12px 16px;
+    }
+
+    .temp-value {
+        font-size: 24px;
+    }
 
     /* header */
     .header {
@@ -7282,16 +7271,21 @@ p.questions_text {
     .lead_section {
         padding: 31px 24px 24px 24px;
         margin-top: 32px;
+        width: 100%;
     }
+
 
     .lead_info {
         max-width: 292px;
         z-index: 2;
+        max-width: 100%;
+        width: 100%;
     }
 
     .lead_section-title {
         font-size: 24px;
         white-space: wrap;
+        max-width: 211px;
     }
 
     .lead_section-subtitle {
@@ -7301,24 +7295,36 @@ p.questions_text {
     }
 
 
+
     .lead_image {
         position: absolute;
-        right: -224px;
-        top: 0;
-        bottom: 0;
-        height: 100%;
-        width: auto;
-        min-width: 505px;
-        object-fit: cover;
-        opacity: 0.3;
+        right: -114px;
+        top: 50%;
+        transform: translateY(-115%) rotate(-9deg);
+        height: auto;
+        width: 244px;
         z-index: 1;
+    }
+
+    .lead_section.card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .lead_section.card button {
+        width: 100%;
+        max-width: 326px;
     }
 
 
     .lead_section button {
+        display: block;
         padding: 13px 58px;
-        width: 312px;
+        box-sizing: border-box;
     }
+
 
     /* faq */
     .text_block__v6__faq {
