@@ -124,7 +124,7 @@
     }
 
     .banner h1{
-        font-size: 53px;
+        font-size: 50px;
     }
 }
 
@@ -133,6 +133,7 @@
         padding-bottom: 46px;
         max-height: 638px;
         border-radius: 0;
+        height: 90dvh;
     }
 
     .banner__content {

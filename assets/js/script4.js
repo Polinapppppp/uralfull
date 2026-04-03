@@ -1,28 +1,25 @@
-// Аккордеон для description
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const descriptionBlock = document.querySelector('.description');
-    
+
     if (!descriptionBlock) {
         console.log('Блок description не найден');
         return;
     }
-    
+
     function handleClick(e) {
         e.stopPropagation();
         console.log('Клик сработал, ширина экрана:', window.innerWidth);
         this.classList.toggle('active');
     }
-    
+
     function initDescription() {
         const width = window.innerWidth;
         console.log('Инициализация, ширина:', width);
-        
+
         if (width <= 1100) {
             console.log('Аккордеон активен');
             descriptionBlock.style.cursor = 'pointer';
-            // Удаляем старый обработчик, чтобы не дублировать
             descriptionBlock.removeEventListener('click', handleClick);
-            // Добавляем новый
             descriptionBlock.addEventListener('click', handleClick);
         } else {
             console.log('Десктоп режим');
@@ -30,70 +27,69 @@ document.addEventListener('DOMContentLoaded', function() {
             descriptionBlock.classList.remove('active');
             descriptionBlock.style.cursor = 'default';
             descriptionBlock.style.border = 'none';
-            
-            // На десктопе показываем текст
+
             const subtitle = descriptionBlock.querySelector('.description-subtitle');
             if (subtitle) {
                 subtitle.style.display = 'block';
             }
         }
     }
-    
-    // Запускаем при загрузке
+
     initDescription();
-    
-    // При изменении размера окна
+
     let resizeTimer;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(initDescription, 250);
     });
 
 
     const sliderProject = document.querySelector('.slider_block.container.top_pad');
-    const faqProject = document.querySelector('.text_block__v6.container.top_pad');
-    
+    const leadSection = document.querySelector('.lead_section.card');
+
     console.log('Найден слайдер:', sliderProject);
-    console.log('Найден FAQ:', faqProject);
-    
-    if (!sliderProject || !faqProject) return;
-    
+    console.log('Найден lead:', leadSection);
+
+    if (!sliderProject || !leadSection) return;
+
     function swapProjectBlocks() {
         const isMobileView = window.innerWidth <= 1300;
-        const parentContainer = sliderProject.parentNode;
-        
-        console.log('Ширина экрана:', window.innerWidth);
-        console.log('Мобильный режим (<=1300):', isMobileView);
-        
-        // Проверяем порядок: если слайдер идет первым, то перед FAQ
-        const isSliderFirst = sliderProject.compareDocumentPosition(faqProject) === 4;
-        console.log('Слайдер первый:', isSliderFirst);
-        
+        const mainContainer = document.querySelector('#primary') || document.querySelector('main');
+
+        const allSections = Array.from(mainContainer.children).filter(el =>
+            el.classList.contains('section') ||
+            el.classList.contains('lead_section') ||
+            (el.children.length > 0 && (el.children[0].classList.contains('lead_section') || el.children[0].classList.contains('section')))
+        );
+
+        const sliderIndex = allSections.indexOf(sliderProject);
+        const leadIndex = allSections.indexOf(leadSection.parentElement); // Используем parentElement для lead_section
+
+        console.log('Все секции:', allSections);
+        console.log('Индекс слайдера:', sliderIndex);
+        console.log('Индекс lead:', leadIndex);
+
         if (isMobileView) {
-            // На экранах <=1300: FAQ должен быть ПЕРВЫМ (слайдер после FAQ)
-            if (isSliderFirst) {
-                console.log('Меняем: ставим FAQ первым');
-                parentContainer.insertBefore(faqProject, sliderProject);
+            if (sliderIndex > leadIndex) {
+                console.log('Меняем: ставим слайдер перед lead');
+                mainContainer.insertBefore(sliderProject, leadSection.parentElement);
             } else {
-                console.log('Порядок уже правильный (FAQ первый)');
+                console.log('Порядок уже правильный (слайдер перед lead)');
             }
         } else {
-            // На экранах >1300: слайдер должен быть ПЕРВЫМ
-            if (!isSliderFirst) {
-                console.log('Меняем: ставим слайдер первым');
-                parentContainer.insertBefore(sliderProject, faqProject);
+            if (leadIndex > sliderIndex) {
+                console.log('Меняем: ставим lead перед слайдером');
+                mainContainer.insertBefore(leadSection.parentElement, sliderProject);
             } else {
-                console.log('Порядок уже правильный (слайдер первый)');
+                console.log('Порядок уже правильный (lead перед слайдером)');
             }
         }
     }
-    
-    // Запускаем при загрузке
+
     swapProjectBlocks();
-    
-    // При изменении размера окна
+
     let resizeTimerProject;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         clearTimeout(resizeTimerProject);
         resizeTimerProject = setTimeout(swapProjectBlocks, 250);
     });

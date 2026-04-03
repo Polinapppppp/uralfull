@@ -64,6 +64,11 @@ button {
     cursor: pointer;
 }
 
+.logo img{
+    shape-rendering: geometricPrecision;
+    image-rendering: -webkit-optimize-contrast;
+}
+
 @media (max-width:900px) {
     button {
         padding: 14px 40px;
@@ -1186,9 +1191,11 @@ body {
 .card_project__image_wrapper img {
     border-radius: 24px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    height: 355px;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hit {
@@ -1232,20 +1239,6 @@ body {
     margin-bottom: 15px;
 }
 
-@media (min-width: 1400px) {
-    .card_v3__top_price {
-        transform: translateY(1px);
-        display: inline-block;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-}
-
-@media (min-width: 1920px) {
-    .card_v3__top_price {
-        transform: translateY(2px);
-    }
-}
 
 .card_project__details {
     align-items: center;
@@ -1375,6 +1368,7 @@ span.hover_span {
     background-color: var(--btn_hover);
     transition: all 0.4s ease;
 }
+
 
 
 /* text_block__v3 */
@@ -3343,7 +3337,7 @@ p.questions_text {
 .footer__inner {
     padding: 47px 0;
     display: grid;
-    grid-template-columns: 516px 596px;
+    grid-template-columns: 517px 596px;
     justify-content: space-between;
 }
 
@@ -3463,6 +3457,21 @@ p.questions_text {
 
 
 
+@media (min-width: 1400px) {
+    .card_v3__top_price {
+        transform: translateY(1px);
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@media (min-width: 1920px) {
+    .card_v3__top_price {
+        transform: translateY(2px);
+    }
+}
+
 @media (max-width:1200px) {
     .technology_info {
         gap: 8px;
@@ -3527,13 +3536,123 @@ p.questions_text {
     }
 }
 
-@media (max-width:1000px) {
-    .about_section .width-289 {
-        display: none;
-    }
-}
 
 @media (max-width: 1300px) {
+    .text_block__v1--card {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
+    .span-2-row-1,
+    .span-2-row-2,
+    .span-2 {
+        height: auto !important;
+        min-height: clamp(320px, 45vw, 320px) !important;
+        max-height: none !important;
+    }
+
+    /* text_block__v7 */
+    .text_block__v7--title h2 {
+        font-size: 36px;
+    }
+
+    .form_section__fields {
+        grid-template-columns: 1fr 1fr auto;
+        gap: 14px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form_section__btn {
+        padding: 13px 40px;
+        font-size: 15px;
+    }
+
+    .form_section__policy {
+        max-width: 220px;
+        font-size: 11px;
+    }
+
+    .form-checkbox__text {
+        font-size: 11px;
+    }
+
+    /* contacts */
+    .contacts__info.grid-4 {
+        gap: 20px;
+    }
+
+    .contacts__info-block {
+        gap: 8px;
+    }
+
+    .contacts__subtitle {
+        font-size: 14px;
+    }
+
+    .contacts__info-value {
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .contacts__bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .contacts__right {
+        grid-column: span 1;
+    }
+
+    .contacts__right img {
+        max-height: 320px;
+    }
+
+    .address_title {
+        font-size: 21px;
+    }
+
+    .address_info {
+        font-size: 16px;
+        padding-top: 12px;
+    }
+
+    .contacts__tel {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .contacts__tel a,
+    .contacts__mail a {
+        font-size: 16px;
+    }
+
+    .contacts__tel p,
+    .contacts__mail p {
+        font-size: 13px;
+    }
+
+    .contacts__button button {
+        padding: 13px 24px;
+        font-size: 16px;
+        margin-top: 18px;
+    }
+
+    .specific--card {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
+    .span-2-row-1,
+    .span-2-row-2,
+    .span-2 {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
     .temp-badge {
         padding: 14px 18px;
     }
@@ -3984,123 +4103,6 @@ p.questions_text {
     }
 }
 
-@media (max-width: 1300px) and (min-width: 951px) {
-    .text_block__v1--card {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-    }
-
-    .span-2-row-1,
-    .span-2-row-2,
-    .span-2 {
-        height: auto !important;
-        min-height: clamp(320px, 45vw, 320px) !important;
-        max-height: none !important;
-    }
-
-    /* text_block__v7 */
-    .text_block__v7--title h2 {
-        font-size: 36px;
-    }
-
-    .form_section__fields {
-        grid-template-columns: 1fr 1fr auto;
-        gap: 14px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .form_section__btn {
-        padding: 13px 40px;
-        font-size: 15px;
-    }
-
-    .form_section__policy {
-        max-width: 220px;
-        font-size: 11px;
-    }
-
-    .form-checkbox__text {
-        font-size: 11px;
-    }
-
-    /* contacts */
-    .contacts__info.grid-4 {
-        gap: 20px;
-    }
-
-    .contacts__info-block {
-        gap: 8px;
-    }
-
-    .contacts__subtitle {
-        font-size: 14px;
-    }
-
-    .contacts__info-value {
-        font-size: 18px;
-        word-break: break-word;
-    }
-
-    .contacts__bottom {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .contacts__right {
-        grid-column: span 1;
-    }
-
-    .contacts__right img {
-        max-height: 320px;
-    }
-
-    .address_title {
-        font-size: 21px;
-    }
-
-    .address_info {
-        font-size: 16px;
-        padding-top: 12px;
-    }
-
-    .contacts__tel {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .contacts__tel a,
-    .contacts__mail a {
-        font-size: 16px;
-    }
-
-    .contacts__tel p,
-    .contacts__mail p {
-        font-size: 13px;
-    }
-
-    .contacts__button button {
-        padding: 13px 24px;
-        font-size: 16px;
-        margin-top: 18px;
-    }
-
-    .specific--card {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-    }
-
-    .span-2-row-1,
-    .span-2-row-2,
-    .span-2 {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-    }
-}
-
 @media (max-width:850px) {
     .header__inner {
         padding: 17px 24px;
@@ -4249,7 +4251,7 @@ p.questions_text {
         grid-template-columns: 1fr 1fr;
         grid-column: 1 / -1;
         grid-row: 2;
-        gap: 32px;
+        gap: clamp(16px, 4vw, 24px);
     }
 
     .time,
@@ -4274,6 +4276,9 @@ p.questions_text {
 }
 
 @media (max-width:1100px) {
+    .about_section .width-289 {
+        display: none;
+    }
     .desktop-nav .nav__list {
         display: none;
     }
@@ -4333,6 +4338,7 @@ p.questions_text {
         text-align: left;
         align-items: start;
         gap: 24.5px;
+        margin-bottom: 0;
     }
 
     .banner_main__right button {
@@ -4586,6 +4592,7 @@ p.questions_text {
 
     .plan_project_buttons {
         margin-bottom: 13px;
+        height: 45px;
     }
 
     .plan_project_buttons button {
@@ -4605,12 +4612,22 @@ p.questions_text {
         object-fit: contain;
         padding-left: 0;
     }
-
+    
     .increase_picture {
-        top: 15px;
-        right: 15px;
+        position: absolute;
+        top: -57px;
+        right: 0;
+        z-index: 10;
+    }
+    
+    .increase_picture svg {
+        width: 45px;
+        height: 45px;
     }
 
+    .increase_picture rect{
+        fill: #fff !important;
+    }
     .specifications {
         padding: 20px 16px 15px 20px;
     }
@@ -4844,6 +4861,7 @@ p.questions_text {
     .banner_main__right {
         gap: 24.5px;
         text-align: left;
+        margin-bottom: 0;
     }
 
     .banner_main__right button {
@@ -5479,18 +5497,19 @@ p.questions_text {
 
     .technology_info {
         position: absolute;
-        bottom: clamp(8px, 2vw, 16px);
-        left: clamp(8px, 2vw, 16px);
-        right: clamp(8px, 2vw, 16px);
+        bottom: clamp(8px, 2vw, 10px);
+        left: clamp(8px, 2vw, 10px);
+        right: clamp(8px, 2vw, 10px);
         gap: clamp(8px, 2vw, 10px);
         margin-top: auto;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        max-width: calc(100% - 32px);
+        max-width: calc(100% - 16px);
         align-items: stretch;
 
     }
+
 
     .technology_info__card {
         flex: 1 1 0;
@@ -5540,7 +5559,7 @@ p.questions_text {
     }
 
     .technology_info__card:last-child {
-        max-width: 100%;
+        max-width: 40%;
         flex: 0 1 auto;
     }
 
@@ -5902,6 +5921,10 @@ p.questions_text {
         border-radius: 16px;
     }
 
+    .banner_main {
+        height: 90dvh;
+    }
+
     .banner_main::before {
         display: none;
     }
@@ -5937,6 +5960,8 @@ p.questions_text {
 
     .advantages__title {
         font-size: 16px;
+        max-width: 212px;
+        width: 152px;
     }
 
     .advantages__subtitle {
@@ -5955,9 +5980,7 @@ p.questions_text {
         padding-bottom: 25px;
     }
 
-    .reviews h2.title {
-        white-space: nowrap;
-    }
+
 
     .title_buttons button {
         display: none;
@@ -6240,15 +6263,7 @@ p.questions_text {
         font-size: 18px;
     }
 
-    .increase_picture {
-        top: 12px;
-        right: 12px;
-    }
 
-    .increase_picture svg {
-        width: 35px;
-        height: 35px;
-    }
 
     .accordion_head {
         padding: 16px 6px 16px 8px;
@@ -7240,15 +7255,7 @@ p.questions_text {
     }
 
     /* plan */
-    .increase_picture {
-        top: 10px;
-        right: 10px;
-    }
 
-    .increase_picture svg {
-        width: 30px;
-        height: 30px;
-    }
 
     .specification_block-value {
         font-size: 24px;
@@ -7800,11 +7807,12 @@ p.questions_text {
         max-width: 349px;
         width: 100%;
         margin-top: 0px;
+        padding-bottom: 20px;
     }
 
     .footer_block__right {
-        gap: 32px;
-        grid-template-columns: 163px 160px;
+        gap: 30px;
+        grid-template-columns: 168px 161px;
     }
 
     .footer_block__2,
@@ -7840,6 +7848,7 @@ p.questions_text {
         grid-template-columns: 1fr 1fr;
         grid-column: 1 / -1;
         grid-row: 2;
+        gap: 34px;
     }
 
     .time,
@@ -7997,6 +8006,7 @@ p.questions_text {
 
     .card_project__image_wrapper img {
         border-radius: 20px;
+        height: 290px;
     }
 
     .card_project:hover .card_project__image_wrapper {
@@ -8141,6 +8151,7 @@ p.questions_text {
 
     .card_project__image_wrapper img {
         border-radius: 18px;
+         height: 300px;
     }
 
     .card_project:hover .card_project__image_wrapper {
@@ -8271,6 +8282,7 @@ p.questions_text {
         border-radius: 14.5px;
         width: 100%;
         max-height: 210px;
+         height: 210px;
     }
 
     .hit {
