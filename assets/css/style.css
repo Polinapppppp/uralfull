@@ -936,9 +936,8 @@ body {
     background: #2B2C29;
     justify-content: space-between;
     gap: 54px;
-    padding: 20px 16px 16px 16px;
+    padding: 20px 16px 20px 20px;
 }
-
 .advantages-card img {
     position: absolute;
     right: 0;
@@ -950,6 +949,10 @@ body {
     font-weight: 200;
     font-size: 24px;
     max-width: 242px;
+}
+
+.advantages__title .dp{
+    width: 185px !important;
 }
 
 .advantages__title,
