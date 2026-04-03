@@ -64,7 +64,7 @@ button {
     cursor: pointer;
 }
 
-.logo img{
+.logo img {
     shape-rendering: geometricPrecision;
     image-rendering: -webkit-optimize-contrast;
 }
@@ -127,8 +127,10 @@ table {
     --btn: #139767;
     --bg-button: #139767;
 
-    --btn_hover: #177553;
+    --btn_hover: #16C988;
     --text-accent: #16C988;
+    --text-hover: #139767;
+    --text-light-hover: #8BFFD5;
     --radius-lg: 28px;
     --radius-md: 14px;
 
@@ -707,9 +709,17 @@ body {
     text-transform: uppercase;
     line-height: 100%;
     letter-spacing: 4%;
-    font-weight: 400;
+    font-weight: 300;
     text-decoration: none;
+    transition: 0.5s ease;
 }
+
+.nav__link:hover {
+    color: var(--text-light-hover);
+    transition: 0.5s ease;
+
+}
+
 
 .header__right {
     display: flex;
@@ -728,12 +738,56 @@ body {
     padding-right: 2px;
 }
 
+.header__phone:hover {
+    color: var(--text-light-hover);
+}
+
 .icon-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: 0.5s ease;
 }
+
+.icon-btn {
+    display: inline-flex;
+    overflow: visible;
+}
+
+.icon-btn:hover .border {
+    stroke: var(--text-light-hover);
+}
+
+.icon-btn:hover .border {
+    fill: var(--text-light-hover);
+}
+
+.icon-btn:hover .icon-btn__icon path {
+    fill: #8BFFD5;
+}
+
+.icon-btn:hover .icon-btn__icon path[stroke] {
+    stroke: #8BFFD5;
+}
+
+/* 
+
+.icon-btn:hover .icon-btn__icon g path:first-child {
+    stroke: #8BFFD5;
+}
+
+.icon-btn:hover .icon-btn__icon g path:last-child {
+    fill: #8BFFD5;
+}
+
+.icon-btn:hover .icon-btn__icon path {
+    fill: #8BFFD5;
+}
+
+.icon-btn:hover .icon-btn__icon path[stroke] {
+    stroke: #8BFFD5;
+} */
 
 .icon-btn__icon {
     width: 26px;
@@ -878,7 +932,6 @@ body {
 .banner_main__title {
     font-size: 100px;
     font-weight: 400;
-    max-width: 572px;
     line-height: 110%;
     color: var(--white);
     text-transform: uppercase;
@@ -938,6 +991,7 @@ body {
     gap: 54px;
     padding: 20px 16px 20px 20px;
 }
+
 .advantages-card img {
     position: absolute;
     right: 0;
@@ -951,7 +1005,7 @@ body {
     max-width: 242px;
 }
 
-.advantages__title .dp{
+.advantages__title .dp {
     width: 185px !important;
 }
 
@@ -1084,7 +1138,7 @@ body {
 }
 
 .width-238 {
-    width: 238px;
+    width: 240px;
 }
 
 .span-2-row-1 {
@@ -1138,10 +1192,8 @@ body {
 
 .text_block__v2_title--btn-dark:hover,
 .text_block__v2_title--btn-dark_mob:hover {
-    background: var(--darkgrey);
-    border: 1px solid var(--dark-2);
+    background: var(--bg-button);
     transition: all 0.4s ease;
-    color: var(--text);
 }
 
 .text_block__v2_title--btn-dark_mob {
@@ -1685,12 +1737,26 @@ input[type="checkbox"]:checked {
 .make__review {
     align-items: center;
     gap: 10px;
+    transition: 0.5s ease;
+}
+
+.make__review:hover {
+    background-color: var(--btn_hover);
+    transition: 0.5s ease;
+
 }
 
 .all__reviews {
     background: #545454;
     align-items: center;
     gap: 10px;
+    transition: 0.5s ease;
+}
+
+.all__reviews:hover {
+    background: var(--bg-button);
+    transition: 0.5s ease;
+
 }
 
 .make__review svg,
@@ -2257,7 +2323,15 @@ input[type="checkbox"]:checked {
     font-size: 24px;
     letter-spacing: 4%;
     color: #051A24;
+    transition: 0.5s ease;
 }
+
+.contacts__info-value a:hover {
+    color: var(--bg-button);
+    transition: 0.5s ease;
+
+}
+
 
 .contacts__bottom {
     display: grid;
@@ -2308,6 +2382,14 @@ input[type="checkbox"]:checked {
     font-size: 18px;
     line-height: 130%;
     letter-spacing: 2%;
+    transition: 0.5s ease;
+}
+
+.contacts__tel a:hover,
+.contacts__mail a:hover {
+    color: var(--text-accent);
+    transition: 0.5s ease;
+
 }
 
 .time__info {
@@ -2329,13 +2411,24 @@ input[type="checkbox"]:checked {
     margin-top: 24px;
     letter-spacing: 2%;
     font-weight: 500;
+    transition: 0.5s ease;
+}
+
+
+.contacts__button button:hover {
+    background-color: var(--btn_hover);
+}
+
+.contacts__button.btn-main button {
+    max-height: 48px;
+    padding: 13px;
 }
 
 .contacts__right {
     grid-column: span 2;
     max-width: 100%;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 24px;
 }
 
 .contacts__right img {
@@ -2987,7 +3080,7 @@ a {
 }
 
 .about_info__card h3 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
     line-height: 140%;
 }
@@ -3187,15 +3280,15 @@ a {
 }
 
 .width-448 {
-    width: 448px;
+    width: 451px;
 }
 
 .width-270 {
-    width: 270px;
+    width: 273px;
 }
 
 .width-195 {
-    width: 195px;
+    width: 198px;
 }
 
 .specific--btn {
@@ -3340,7 +3433,7 @@ p.questions_text {
 .footer__inner {
     padding: 47px 0;
     display: grid;
-    grid-template-columns: 517px 596px;
+    grid-template-columns: 535px 596px;
     justify-content: space-between;
 }
 
@@ -3382,6 +3475,12 @@ p.questions_text {
     display: flex;
     gap: 8px;
     align-items: center;
+    transition: 0.5s ease;
+}
+
+.footer__icon p:hover {
+    color: var(--text-light-hover);
+    transition: 0.5s ease;
 }
 
 .footer_telegram__p {
@@ -3390,6 +3489,8 @@ p.questions_text {
     letter-spacing: 2%;
     font-weight: 400;
     color: #fff;
+    transition: 0.5s ease;
+
 }
 
 .footer_tel__p {
@@ -3398,6 +3499,8 @@ p.questions_text {
     letter-spacing: 3%;
     font-weight: 400;
     color: #fff;
+    transition: 0.5s ease;
+
 }
 
 .footer_block__1 img {
@@ -3436,6 +3539,13 @@ p.questions_text {
     line-height: 1.3;
     letter-spacing: 2%;
     color: #fff;
+    transition: 0.5s ease;
+}
+
+.footer_block__2 a:hover,
+.footer_block__3 a:hover {
+    transition: 0.5s ease;
+    color: var(--text-light-hover);
 }
 
 .footer_block__4 {
@@ -4282,6 +4392,7 @@ p.questions_text {
     .about_section .width-289 {
         display: none;
     }
+
     .desktop-nav .nav__list {
         display: none;
     }
@@ -4329,8 +4440,9 @@ p.questions_text {
     }
 
     .banner_main__title {
-        font-style: 88px;
+        font-size: 88px;
         margin-bottom: 8px;
+        max-width: 515px;
     }
 
     .banner_main__subtitle {
@@ -4615,22 +4727,23 @@ p.questions_text {
         object-fit: contain;
         padding-left: 0;
     }
-    
+
     .increase_picture {
         position: absolute;
         top: -57px;
         right: 0;
         z-index: 10;
     }
-    
+
     .increase_picture svg {
         width: 45px;
         height: 45px;
     }
 
-    .increase_picture rect{
+    .increase_picture rect {
         fill: #fff !important;
     }
+
     .specifications {
         padding: 20px 16px 15px 20px;
     }
@@ -6326,6 +6439,11 @@ p.questions_text {
 }
 
 @media (max-width:390px) {
+
+    .cert-modal-close {
+        top: 10px;
+        right: -20px;
+    }
 
     .temp-badge {
         padding: 12px 16px;
@@ -8154,7 +8272,7 @@ p.questions_text {
 
     .card_project__image_wrapper img {
         border-radius: 18px;
-         height: 300px;
+        height: 300px;
     }
 
     .card_project:hover .card_project__image_wrapper {
@@ -8285,7 +8403,7 @@ p.questions_text {
         border-radius: 14.5px;
         width: 100%;
         max-height: 210px;
-         height: 210px;
+        height: 210px;
     }
 
     .hit {
@@ -8380,6 +8498,7 @@ p.questions_text {
 
     .text_block__v2_title--btn-dark_mob {
         display: block;
+
     }
 
     .text_block__v2--btn,
@@ -8427,4 +8546,57 @@ p.questions_text {
     .accordion_content {
         padding-right: 30px;
     }
+}
+
+/* Курсор на весь слайд */
+.certificate_slide {
+    cursor: pointer;
+}
+
+/* Стили модального окна */
+.cert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none;
+    /* Скрыто по умолчанию */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.cert-modal img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+}
+
+.cert-modal-caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
 }

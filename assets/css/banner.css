@@ -86,11 +86,13 @@
 .breadcrumbs__link {
     color: var(--bg);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.5s ease;
 }
 
 .breadcrumbs__link:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #8BFFD5;
+    transition: color 0.5s ease;
+
 }
 
 @media (max-width:600px) {

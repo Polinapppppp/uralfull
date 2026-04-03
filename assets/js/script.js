@@ -174,4 +174,56 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     initAccordion();
+
+
+    const modal = document.createElement('div');
+    modal.className = 'cert-modal';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'cert-modal-close';
+    closeBtn.innerHTML = '&times;';
+    
+    const modalImg = document.createElement('img');
+    modalImg.alt = 'Сертификат';
+    
+    const caption = document.createElement('p');
+    caption.className = 'cert-modal-caption';
+    
+    modal.appendChild(closeBtn);
+    modal.appendChild(modalImg);
+    modal.appendChild(caption);
+    document.body.appendChild(modal);
+
+    const slides = document.querySelectorAll('.certificate_slide');
+    
+    slides.forEach(slide => {
+        slide.addEventListener('click', function() {
+            const imgInside = this.querySelector('img');
+            const subtitle = this.querySelector('.slide_subtitle');
+            
+            if (imgInside) {
+                modalImg.src = imgInside.src;
+                caption.textContent = subtitle ? subtitle.textContent : '';
+                
+                modal.classList.add('open');
+            }
+        });
+    });
+
+    function closeModal() {
+        modal.classList.remove('open');
+        setTimeout(() => { modalImg.src = ''; }, 300);
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
 });
