@@ -4372,6 +4372,12 @@ p.questions_text {
 }
 
 @media (max-width:1100px) {
+    .increase_picture {
+        pointer-events: auto !important;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .about_section .width-289 {
         display: none;
     }
@@ -4415,7 +4421,7 @@ p.questions_text {
         justify-content: center;
         align-items: center;
         padding-top: 0;
-        
+
     }
 
     .banner_main__content {
@@ -4450,6 +4456,23 @@ p.questions_text {
         justify-content: space-between;
         max-height: 177px;
         gap: 10px;
+    }
+
+    .advantages::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--dark-2);
+        z-index: 2;
+    }
+
+    .banner_main {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 
     .advantages-card img {
@@ -6275,7 +6298,7 @@ p.questions_text {
         font-size: 20px;
     }
 
-    .address_title.address_v2{
+    .address_title.address_v2 {
         padding-bottom: 6px;
     }
 
@@ -6467,7 +6490,7 @@ p.questions_text {
         margin-left: 11px;
     }
 
-    .burger-btn.active{
+    .burger-btn.active {
         margin-bottom: 6px;
 
     }
@@ -6477,7 +6500,7 @@ p.questions_text {
         height: 18px !important;
     }
 
-    .icon-btn__icon2{
+    .icon-btn__icon2 {
         width: 18px !important;
         height: 18px !important;
     }
@@ -6550,7 +6573,6 @@ p.questions_text {
     .advantages {
         padding-top: 8px;
         border-radius: 0 0 24px 24px;
-        margin-top: -1px;
     }
 
     .advantages-card img {
