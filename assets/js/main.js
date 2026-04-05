@@ -64,52 +64,117 @@ if (faq) {
     });
 }
 
-const fsBtn = document.getElementById('btn');
-const imgElement = document.getElementById('img');
-const imgContainer = document.querySelector('.plan_project-img');
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // 1. Создаем разметку модалки (один раз)
+    const modalHTML = `
+        <div class="universal-modal" id="universalModal">
+            <div class="universal-modal__content">
+                <button class="universal-modal__close" aria-label="Закрыть">&times;</button>
+                <img src="" alt="">
+                <div class="universal-modal__nav" style="display:none;">
+                    <button class="prev-btn">&lsaquo;</button>
+                    <button class="next-btn">&rsaquo;</button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-if (fsBtn) {
-    fsBtn.addEventListener('click', () => {
-        if (imgContainer) {
-            if (!document.fullscreenElement) {
-                if (imgContainer.requestFullscreen) {
-                    imgContainer.requestFullscreen();
-                } else if (imgContainer.webkitRequestFullscreen) {
-                    imgContainer.webkitRequestFullscreen();
-                } else if (imgContainer.msRequestFullscreen) {
-                    imgContainer.msRequestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
+    const modal = document.getElementById('universalModal');
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.universal-modal__close');
+    const navContainer = modal.querySelector('.universal-modal__nav');
+    const prevBtn = modal.querySelector('.prev-btn');
+    const nextBtn = modal.querySelector('.next-btn');
+    
+    let currentSliderImages = []; 
+    let currentIndex = 0;
+
+    function openModal(src, imagesArray = null, index = 0) {
+        modalImg.src = src;
+        
+        if (imagesArray && imagesArray.length > 1) {
+            currentSliderImages = imagesArray;
+            currentIndex = index;
+            navContainer.style.display = 'flex';
+        } else {
+            currentSliderImages = [];
+            navContainer.style.display = 'none';
+        }
+        
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => { modalImg.src = ''; }, 300);
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.classList.contains('universal-modal__content')) {
+            closeModal();
         }
     });
-}
 
-document.addEventListener('fullscreenchange', function () {
-    if (document.fullscreenElement) {
-        imgContainer.style.background = '#000';
-        imgContainer.style.display = 'flex';
-        imgContainer.style.alignItems = 'center';
-        imgContainer.style.justifyContent = 'center';
-        if (imgElement) {
-            imgElement.style.maxHeight = '90vh';
-            imgElement.style.width = 'auto';
-            imgElement.style.objectFit = 'contain';
-        }
-    } else {
-        imgContainer.style.background = '';
-        imgContainer.style.display = '';
-        imgContainer.style.alignItems = '';
-        imgContainer.style.justifyContent = '';
-        if (imgElement) {
-            imgElement.style.maxHeight = '';
-            imgElement.style.width = '';
-            imgElement.style.objectFit = '';
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    function updateModalImage() {
+        if (currentSliderImages.length > 0) {
+            modalImg.src = currentSliderImages[currentIndex].src;
         }
     }
 
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentSliderImages.length) % currentSliderImages.length;
+        updateModalImage();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentSliderImages.length;
+        updateModalImage();
+    });
+
+
+    const planBtn = document.getElementById('btn');
+    const planImgOriginal = document.getElementById('img');
+
+    if (planBtn && planImgOriginal) {
+        planBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal(planImgOriginal.src); 
+        });
+    }
+
+
+    const fsBtn = document.querySelector('.slider_block--fullscreen');
+    
+    if (fsBtn) {
+        const newFsBtn = fsBtn.cloneNode(true);
+        fsBtn.parentNode.replaceChild(newFsBtn, fsBtn);
+        
+        newFsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wrapper = document.querySelector('.slider_block__wrapper');
+            if (!wrapper) return;
+            
+            const activeImg = wrapper.querySelector('.swiper-slide-active img') || wrapper.querySelector('.swiper-slide img');
+            
+            if (activeImg) {
+                openModal(activeImg.src);
+            }
+        });
+    }
     
 });

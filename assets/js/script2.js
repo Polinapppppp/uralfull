@@ -10,7 +10,6 @@ function initProjectSlider() {
         const counterCurrent = container.querySelector('.swiper_counter .current');
         const counterTotal = container.querySelector('.swiper_counter .total');
         const tabs = container.querySelectorAll('.slider_tabs__tab');
-        const fullscreenBtn = container.querySelector('.slider_block--fullscreen');
         
         if (!prevBtn || !nextBtn) return;
         
@@ -60,17 +59,7 @@ function initProjectSlider() {
             });
         });
         
-        if (fullscreenBtn) {
-            fullscreenBtn.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    container.requestFullscreen().catch(err => {
-                        console.log(`Ошибка включения полноэкранного режима: ${err.message}`);
-                    });
-                } else {
-                    document.exitFullscreen();
-                }
-            });
-        }
+        
     });
 }
 

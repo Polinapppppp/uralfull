@@ -77,21 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const fsBtn = document.querySelector('.slider_block--fullscreen');
-    if (fsBtn) {
-        fsBtn.addEventListener('click', () => {
-            const container = document.querySelector('.slider_block__wrapper');
-            if (!document.fullscreenElement) {
-                if (container.requestFullscreen) {
-                    container.requestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        });
-    }
+    
 
     let faq = document.querySelector('.text_block__v6__faq');
     if (faq) {
