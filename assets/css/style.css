@@ -3634,6 +3634,9 @@ p.questions_text {
 
 
 @media (max-width: 1300px) {
+    .banner h1.policy__title{
+        font-size: 50px;
+    }
     .text_block__v1--card {
         height: auto !important;
         min-height: auto !important;
