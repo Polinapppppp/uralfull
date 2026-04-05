@@ -5697,6 +5697,24 @@ p.questions_text {
 }
 
 @media (max-width:700px) {
+    .policy_content {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+    .banner h1.policy__title{
+        font-size: 35px;
+    }
+    
+    .policy_content p {
+        margin-bottom: 16px;
+        text-align: left; 
+    }
+    
+    .policy_content h3 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
     .header__phone {
         display: none;
     }
@@ -6047,6 +6065,11 @@ p.questions_text {
 }
 
 @media (max-width:508px) {
+ 
+    .banner h1.policy__title{
+        font-size: 26px;
+    }
+
     .header__inner {
         background: #131B1FB2;
         border-radius: 16px;
@@ -6459,6 +6482,10 @@ p.questions_text {
 
 @media (max-width:450px) {
 
+    
+    .banner h1.policy__title{
+        font-size: 24px;
+    }
     .cert-modal-close {
         top: 10px !important;
         right: -17px !important;
@@ -8711,4 +8738,38 @@ p.questions_text {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.policy_content {
+    max-width: 900px; 
+    margin: 0 auto;   
+    font-size: 16px;
+    line-height: 1.4; 
+    color: var(--text);
+}
+
+.policy_content p {
+    margin-bottom: 20px; 
+    text-align: justify; 
+}
+
+.policy_content h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark-2);
+}
+
+.policy_content a {
+    color: #139767;
+    text-decoration: underline;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    
 }
