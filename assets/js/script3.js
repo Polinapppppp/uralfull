@@ -1,100 +1,125 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.questions_tab');
     const contents = document.querySelectorAll('.question_content');
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        .question_content {
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .question_content .questions_title_subtitle,
-        .question_content .questions_text,
-        .question_content .questions_block__right--bottom {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        .question_content.active .questions_title_subtitle,
-        .question_content.active .questions_text,
-        .question_content.active .questions_block__right--bottom {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
-    document.head.appendChild(style);
-    
+
     function initDesktopMode() {
-        tabs.forEach(tab => {
+        tabs.forEach((tab, index) => {
             tab.removeEventListener('click', tab.clickHandler);
+            
             tab.clickHandler = function() {
-                const index = Array.from(tabs).indexOf(this);
-                
                 tabs.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
                 
-                contents.forEach(c => {
-                    c.classList.remove('active');
-                });
+                contents.forEach(c => c.classList.remove('active'));
                 if (contents[index]) {
                     contents[index].classList.add('active');
+                    resetMobileStyles(contents[index]);
                 }
             };
             tab.addEventListener('click', tab.clickHandler);
         });
     }
-    
-    function initMobileMode() {
-        contents.forEach(content => {
-            content.removeEventListener('click', content.clickHandler);
-            
-            content.clickHandler = function(e) {
-                if (e.target.closest('.questions_block__right--bottom svg')) {
-                    e.stopPropagation();
-                    console.log('Открыть консультацию');
-                    return;
-                }
-                
-                contents.forEach(c => {
-                    if (c !== this) {
-                        c.classList.remove('active');
-                    }
-                });
-                
-                this.classList.toggle('active');
-            };
-            
-            content.addEventListener('click', content.clickHandler);
+
+    function resetMobileStyles(content) {
+        const texts = content.querySelectorAll('.questions_title_subtitle, .questions_text, .questions_block__right--bottom');
+        texts.forEach(text => {
+            text.style.maxHeight = '';
+            text.style.opacity = '';
+            text.style.transition = '';
         });
     }
-    
-    function checkMode() {
-        const isMobile = window.innerWidth <= 1000;
-        
-        if (isMobile) {
-            initMobileMode();
-            contents.forEach((c, i) => {
-                if (i === 0) c.classList.add('active');
-                else c.classList.remove('active');
-            });
-        } else {
-            initDesktopMode();
-            const activeTab = document.querySelector('.questions_tab.active');
-            if (activeTab) {
-                const index = Array.from(tabs).indexOf(activeTab);
-                contents.forEach((c, i) => {
-                    if (i === index) c.classList.add('active');
-                    else c.classList.remove('active');
+
+    function initMobileMode() {
+        contents.forEach(content => {
+            content.classList.remove('active');
+            resetMobileStyles(content);
+
+            content.removeEventListener('click', content.clickHandler);
+
+            content.clickHandler = function(e) {
+                if (e.target.closest('svg')) return;
+
+                const isActive = this.classList.contains('active');
+
+                contents.forEach(c => {
+                    if (c !== this && c.classList.contains('active')) {
+                        c.classList.remove('active');
+                        closeItem(c);
+                    }
                 });
-            } else {
-                tabs[0]?.classList.add('active');
-                contents[0]?.classList.add('active');
-            }
+
+                if (isActive) {
+                    this.classList.remove('active');
+                    closeItem(this);
+                } else {
+                    this.classList.add('active');
+                    openItem(this);
+                }
+            };
+
+            content.addEventListener('click', content.clickHandler);
+        });
+
+        if (contents[0]) {
+            contents[0].classList.add('active');
+            openItem(contents[0]);
         }
     }
-    
+
+    function closeItem(item) {
+        const texts = item.querySelectorAll('.questions_title_subtitle, .questions_text, .questions_block__right--bottom');
+        texts.forEach(text => {
+            text.style.transition = 'max-height 0.4s ease-out, opacity 0.3s ease-out';
+            text.style.maxHeight = '0px';
+            text.style.opacity = '0';
+        });
+    }
+
+    function openItem(item) {
+        const texts = item.querySelectorAll('.questions_title_subtitle, .questions_text, .questions_block__right--bottom');
+
+        texts.forEach(text => {
+            text.style.transition = 'none'; 
+            text.style.maxHeight = 'none';  
+            text.style.opacity = '1';       
+        });
+
+        item.offsetHeight; 
+
+        requestAnimationFrame(() => {
+            texts.forEach(text => {
+                const height = text.scrollHeight; 
+                
+                text.style.transition = 'max-height 0.4s ease-out, opacity 0.3s ease-out';
+                text.style.maxHeight = height + 'px';
+            });
+        });
+    }
+
+    function checkMode() {
+        const isMobile = window.innerWidth <= 1100;
+
+        if (isMobile) {
+            initMobileMode();
+        } else {
+            initDesktopMode();
+            
+            const activeTab = document.querySelector('.questions_tab.active');
+            const activeIndex = activeTab ? Array.from(tabs).indexOf(activeTab) : 0;
+
+            contents.forEach((c, i) => {
+                resetMobileStyles(c); 
+                if (i === activeIndex) {
+                    c.classList.add('active');
+                } else {
+                    c.classList.remove('active');
+                }
+            });
+        }
+    }
+
     checkMode();
-    
+
     let resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);

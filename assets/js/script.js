@@ -78,37 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     
-
-    let faq = document.querySelector('.text_block__v6__faq');
-    if (faq) {
-        faq.addEventListener('click', function (e) {
-            let targetItem = e.target.closest('.faq_head');
-            if (!targetItem) return;
-
-            let faqItem = targetItem.closest('.faq_item');
-            let currentText = faqItem.querySelector('.faq_content');
-
-            faqItem.classList.toggle('active');
-
-            if (faqItem.classList.contains('active')) {
-                currentText.style.maxHeight = currentText.scrollHeight + 'px';
-            } else {
-                currentText.style.maxHeight = '0';
-            }
-
-            const hasActiveItem = document.querySelector('.faq_item.active');
-            const faqImage = document.querySelector('.text_block__v6 img');
-
-            if (faqImage) {
-                if (hasActiveItem) {
-                    faqImage.style.maxHeight = '496px';
-                } else {
-                    faqImage.style.maxHeight = '251px';
-                }
-            }
-        });
-    }
-
     const tabs2 = Array.from(document.querySelectorAll('.questions_tab'));
     const contents = Array.from(document.querySelectorAll('.question_content'));
 

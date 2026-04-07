@@ -11,7 +11,7 @@ new Swiper('.certificate_slider', {
 
     breakpoints: {
         480: {
-            slidesPerView: 1.3, 
+            slidesPerView: 1.3,
         },
         768: {
             slidesPerView: 3,
@@ -65,116 +65,217 @@ if (faq) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+const modal = document.getElementById('myModal');
+    if (!modal) {
+        console.log('Модалка #myModal не найдена');
+        return;
+    }
     
-    // 1. Создаем разметку модалки (один раз)
-    const modalHTML = `
-        <div class="universal-modal" id="universalModal">
-            <div class="universal-modal__content">
-                <button class="universal-modal__close" aria-label="Закрыть">&times;</button>
-                <img src="" alt="">
-                <div class="universal-modal__nav" style="display:none;">
-                    <button class="prev-btn">&lsaquo;</button>
-                    <button class="next-btn">&rsaquo;</button>
-                </div>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-    const modal = document.getElementById('universalModal');
-    const modalImg = modal.querySelector('img');
-    const closeBtn = modal.querySelector('.universal-modal__close');
-    const navContainer = modal.querySelector('.universal-modal__nav');
-    const prevBtn = modal.querySelector('.prev-btn');
-    const nextBtn = modal.querySelector('.next-btn');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('closeModal');
+    const prevBtn = document.getElementById('modalPrev');
+    const nextBtn = document.getElementById('modalNext');
     
-    let currentSliderImages = []; 
+    let images = [];
     let currentIndex = 0;
-
-    function openModal(src, imagesArray = null, index = 0) {
-        modalImg.src = src;
-        
-        if (imagesArray && imagesArray.length > 1) {
-            currentSliderImages = imagesArray;
-            currentIndex = index;
-            navContainer.style.display = 'flex';
-        } else {
-            currentSliderImages = [];
-            navContainer.style.display = 'none';
-        }
-        
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden'; 
-    }
-
-    function closeModal() {
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-        setTimeout(() => { modalImg.src = ''; }, 300);
-    }
-
-    closeBtn.addEventListener('click', closeModal);
+    let isAnimating = false;
+    let isGalleryMode = false; 
     
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.classList.contains('universal-modal__content')) {
-            closeModal();
+    function getImages() {
+        images = [];
+        const slides = document.querySelectorAll('.slider_block__wrapper .swiper-slide');
+        slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            if (img && img.src) {
+                images.push(img.src);
+            }
+        });
+        console.log('Найдено изображений:', images.length);
+    }
+    
+    function changeImageWithTransition(newSrc, direction) {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        const slideOut = direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)';
+        
+        modalImg.style.transition = 'transform 0.3s ease-out';
+        modalImg.style.transform = slideOut;
+        
+        setTimeout(() => {
+            modalImg.src = newSrc;
+            modalImg.style.transition = 'none';
+            modalImg.style.transform = 'translateX(0)';
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 50);
+        }, 300);
+    }
+    
+    function openGalleryModal(index) {
+        isGalleryMode = true;
+        if (images.length === 0) getImages();
+        if (images.length === 0) return;
+        currentIndex = index;
+        modalImg.style.transform = 'translateX(0)';
+        modalImg.src = images[currentIndex];
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        isAnimating = false;
+        
+        if (prevBtn && nextBtn) {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        }
+    }
+    
+    function openSingleModal(src) {
+        isGalleryMode = false;
+        modalImg.style.transform = 'translateX(0)';
+        modalImg.src = src;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        if (prevBtn && nextBtn) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+    }
+    
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        isAnimating = false;
+    }
+    
+    function nextSlide() {
+        if (!isGalleryMode) return;
+        if (images.length === 0 || isAnimating) return;
+        currentIndex++;
+        if (currentIndex >= images.length) currentIndex = 0;
+        changeImageWithTransition(images[currentIndex], 'left');
+        console.log('Слайд:', currentIndex + 1, 'из', images.length);
+    }
+    
+    function prevSlide() {
+        if (!isGalleryMode) return;
+        if (images.length === 0 || isAnimating) return;
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        changeImageWithTransition(images[currentIndex], 'right');
+        console.log('Слайд:', currentIndex + 1, 'из', images.length);
+    }
+    
+    if (closeBtn) closeBtn.onclick = closeModal;
+    if (prevBtn) prevBtn.onclick = prevSlide;
+    if (nextBtn) nextBtn.onclick = nextSlide;
+    
+    modal.onclick = function(e) {
+        if (e.target === modal) closeModal();
+    };
+    
+    document.addEventListener('keydown', function(e) {
+        if (modal.style.display === 'flex') {
+            if (e.key === 'Escape') closeModal();
+            if (isGalleryMode && e.key === 'ArrowLeft') prevSlide();
+            if (isGalleryMode && e.key === 'ArrowRight') nextSlide();
+        }
+    });
+    
+    const fullscreenBtn = document.querySelector('.slider_block--fullscreen');
+    if (fullscreenBtn) {
+        fullscreenBtn.onclick = function(e) {
+            e.preventDefault();
+            getImages();
+            
+            const activeSlide = document.querySelector('.slider_block__wrapper .swiper-slide-active');
+            let startIndex = 0;
+            
+            if (activeSlide) {
+                const activeImg = activeSlide.querySelector('img');
+                if (activeImg && activeImg.src) {
+                    const foundIndex = images.findIndex(src => src === activeImg.src);
+                    if (foundIndex !== -1) startIndex = foundIndex;
+                }
+            }
+            
+            openGalleryModal(startIndex);
+        };
+    }
+    
+    const planBtn = document.getElementById('btn');
+    const planImg = document.getElementById('img');
+    if (planBtn && planImg) {
+        planBtn.onclick = function(e) {
+            e.preventDefault();
+            openSingleModal(planImg.src);
+        };
+    }
+
+});
+
+const consultBtns = document.querySelectorAll('.js-open-modal'); 
+const consultModal = document.querySelector('.close-popup');
+const consultClose = document.querySelector('.close-popup__form_clos');
+
+if (consultModal) {
+    consultBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            consultModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        });
+    });
+
+    if (consultClose) {
+        consultClose.addEventListener('click', () => {
+            consultModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    consultModal.addEventListener('click', (e) => {
+        if (e.target === consultModal) {
+            consultModal.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+        if (e.key === 'Escape' && consultModal.classList.contains('active')) {
+            consultModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 
-    function updateModalImage() {
-        if (currentSliderImages.length > 0) {
-            modalImg.src = currentSliderImages[currentIndex].src;
+
+
+
+    const cookieModal = document.getElementById('cookieModal');
+    const cookieClose = cookieModal?.querySelector('.cookie-modal__close');
+    const cookieAcceptBtn = cookieModal?.querySelector('.js-cookie-accept');
+    
+    const isCookieAccepted = localStorage.getItem('cookieAccepted');
+    
+    if (!isCookieAccepted && cookieModal) {
+        setTimeout(() => {
+            cookieModal.classList.add('active');
+        }, 1000);
+    }
+    
+    function acceptCookies() {
+        if (cookieModal) {
+            cookieModal.classList.remove('active');
+            localStorage.setItem('cookieAccepted', 'true');
         }
     }
-
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentIndex = (currentIndex - 1 + currentSliderImages.length) % currentSliderImages.length;
-        updateModalImage();
-    });
-
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentIndex = (currentIndex + 1) % currentSliderImages.length;
-        updateModalImage();
-    });
-
-
-    const planBtn = document.getElementById('btn');
-    const planImgOriginal = document.getElementById('img');
-
-    if (planBtn && planImgOriginal) {
-        planBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            openModal(planImgOriginal.src); 
-        });
-    }
-
-
-    const fsBtn = document.querySelector('.slider_block--fullscreen');
     
-    if (fsBtn) {
-        const newFsBtn = fsBtn.cloneNode(true);
-        fsBtn.parentNode.replaceChild(newFsBtn, fsBtn);
-        
-        newFsBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const wrapper = document.querySelector('.slider_block__wrapper');
-            if (!wrapper) return;
-            
-            const activeImg = wrapper.querySelector('.swiper-slide-active img') || wrapper.querySelector('.swiper-slide img');
-            
-            if (activeImg) {
-                openModal(activeImg.src);
-            }
-        });
+    if (cookieAcceptBtn) {
+        cookieAcceptBtn.addEventListener('click', acceptCookies);
     }
     
-});
+    if (cookieClose) {
+        cookieClose.addEventListener('click', acceptCookies);
+    }
+}
